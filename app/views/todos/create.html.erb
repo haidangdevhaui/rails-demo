@@ -1,0 +1,18 @@
+<%= render "_partials/header" %>
+<%= link_to '<i class="glyphicon glyphicon-list"></i> list'.html_safe, {controller: "todos", action: "index"}, class: "btn btn-success", style: "margin-bottom: 10px" %>
+
+<%= form_with scope: :todo, method: @action == 'create' ? 'post' : 'put', local: true do |form| %>
+	
+	<% if @todo.errors.any? %>
+	    <% @todo.errors.full_messages.each do |msg| %>
+        <p style="color: red"><%= msg %></p>
+        <% end %>
+	<% end %>
+
+  	<div class="input-group field_with_errors">
+		<%= form.text_field :title, class: 'form-control', value: @todo ? @todo.title : '' %>
+		<span class="input-group-btn">
+			<%= form.submit @action == 'create' ? 'create' : 'update', class: 'btn btn-primary' %>
+		</span>
+	</div>
+<% end %>

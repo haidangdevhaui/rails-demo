@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo | <%= @title %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+    <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <body>
+  	<div class="row">
+  		<div class="container">
+  			<div class="col-xs-6 col-xs-offset-3"><%= yield %></div>
+  		</div>
+  	</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js""></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

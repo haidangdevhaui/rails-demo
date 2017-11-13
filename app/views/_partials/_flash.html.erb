@@ -1,0 +1,5 @@
+<% flash.each do |name, msg| -%>
+	<div class="alert alert-success" onclick="this.classList.add('hidden')">
+		<%= msg %>
+	</div>
+<% end -%>
